@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>3E85EE79-9D71-4955-AE42-FAB76DA1CBD4</string>
+	<key>IDESourceControlProjectName</key>
+	<string>AirDrop</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>D72847649E6EC4EBB166C06BC191020884CD3ACE</key>
+		<string>https://github.com/firewolf-ljw/AirDrop.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>AirDrop/AirDrop.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>D72847649E6EC4EBB166C06BC191020884CD3ACE</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/firewolf-ljw/AirDrop.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>D72847649E6EC4EBB166C06BC191020884CD3ACE</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>D72847649E6EC4EBB166C06BC191020884CD3ACE</string>
+			<key>IDESourceControlWCCName</key>
+			<string>AirDrop</string>
+		</dict>
+	</array>
+</dict>
+</plist>
