@@ -23,7 +23,7 @@ class ADViewController: UIViewController {
         self.displayName.text = self.myPeerId.displayName
         self.targitName.text = nil
         self.connBtn.enabled = false
-        self.sendBtn.enabled = false
+//        self.sendBtn.enabled = false
         
         self.sendMsg.delegate = self
         self.receivedMsg.delegate = self
@@ -105,7 +105,7 @@ class ADViewController: UIViewController {
         self.targitPeerId = nil
         self.targitName.text = nil
         self.connBtn.enabled = false
-        self.sendBtn.enabled = false
+//        self.sendBtn.enabled = false
     }
     
     @IBAction func refresh(sender: AnyObject) {
@@ -134,18 +134,20 @@ class ADViewController: UIViewController {
     
     @IBAction func sendData(sender: AnyObject) {
     
-//        let data = self.sendMsg.text.dataUsingEncoding(NSUTF8StringEncoding)
-        
-        let data = NSData(contentsOfFile: NSBundle.mainBundle().pathForResource("1", ofType: "jpg")!)
-        
-        println("sended data: \(data!.length)")
-        
-        let rst = self.session.sendData(data!, toPeers: [self.targitPeerId], withMode: MCSessionSendDataMode.Reliable, error: nil)
-        
-        if rst {
-            println("send data succeed")
-        } else {
-            println("send data failed")
+        if self.targitPeerId != nil {
+            let data = self.sendMsg.text.dataUsingEncoding(NSUTF8StringEncoding)
+            
+    //        let data = NSData(contentsOfFile: NSBundle.mainBundle().pathForResource("1", ofType: "jpg")!)
+            
+            println("sended data: \(data!.length)")
+            
+            let rst = self.session.sendData(data!, toPeers: [self.targitPeerId], withMode: MCSessionSendDataMode.Reliable, error: nil)
+            
+            if rst {
+                println("send data succeed")
+            } else {
+                println("send data failed")
+            }
         }
     }
     
@@ -155,15 +157,15 @@ extension ADViewController: MCSessionDelegate {
 
     func session(session: MCSession!, didReceiveData data: NSData!, fromPeer peerID: MCPeerID!) {
         
-        println("reseived data: \(data.length)")
+//        println("reseived data: \(data.length)")
         
-//        if let msg = NSString(data: data, encoding: NSUTF8StringEncoding) {
-//        
-//            dispatch_async(dispatch_get_main_queue()) {
-//                self.receivedMsg.text = "\(msg)"
-//            }
-//            
-//        }
+        if let msg = NSString(data: data, encoding: NSUTF8StringEncoding) {
+        
+            dispatch_async(dispatch_get_main_queue()) {
+                self.receivedMsg.text = "\(msg)"
+            }
+            
+        }
     }
     
     func session(session: MCSession!, peer peerID: MCPeerID!, didChangeState state: MCSessionState) {
@@ -177,8 +179,9 @@ extension ADViewController: MCSessionDelegate {
                 
                 let msg = "成功连接上: \(peerID.displayName)"
                 alert = UIAlertController(title: title, message: msg, preferredStyle: UIAlertControllerStyle.Alert)
-                self.sendBtn.enabled = true
-                
+//                if self.connBtn.enabled {
+//                    self.sendBtn.enabled = true
+//                }
             } else if state == MCSessionState.NotConnected {
                 
                 let msg = "未能连接上: \(peerID.displayName)"
